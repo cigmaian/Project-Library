@@ -8,6 +8,26 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <h1> myLibrary</h1> 
+        <div id="newBtn-Container">
+            <button id="newBtn"> New Book</button>
+        </div>
+        <div id="popUp">
+            <form id="from" action="./script.js">
+                <span class="close">&times;</span>
+                <legend> Add New Book </legend> 
+                <div id="textInput">
+                    <input type="text" id="title" name="title" placeholder="Title">
+                    <input type="text" id="author" name="author" placeholder="Author">
+                    <input type="text" id="pages" name="pages" placeholder="Pages">
+                </div>
+                <div id="checkBox">
+                    <label> Read: </label><input type="checkbox" id="read" value="yes">
+                </div>
+                <button type="submit" form="form" id="addBtn">Add</button>
+            </form>
+        </div>
+        <div id='Library-container'></div>
     <script src="./script.js" defer></script>
 </body>
 </html>
