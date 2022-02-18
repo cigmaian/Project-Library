@@ -2,14 +2,14 @@
 const addBtn = document.querySelector('#addBtn');
 addBtn.addEventListener('click', addBookToLibrary);
 
-/*
+
 const newBookBtn = document.querySelector('#newBtn');
 newBookBtn.addEventListener('click', () => popUpForm.style.display = 'block');
 
 const popUpForm = document.getElementById('popUp');
 const closePopUp = document.getElementsByTagName('span')[0];
 closePopUp.addEventListener('click', () => popUpForm.style.display = 'none');
-*/
+
 //Book Constructor
 class Book {
     constructor(title, author, pages, read) {
@@ -81,12 +81,15 @@ function createBook(item) {
         readBtn.textContent = 'Read';
         readBtn.style.backgroundColor = '#63da63'
     }
+    readBtn.addEventListener('click', () => { 
+        item.read = !item.read; 
+        setData(); 
+        render();
+    }); 
 
     removeBtn.textContent = 'Remove'; 
     removeBtn.setAttribute('id', 'removeBtn');
     bookDiv.appendChild(removeBtn);
-    
-    library.appendChild(bookDiv);
 
     removeBtn.addEventListener('click', () => {
         myLibrary.splice(myLibrary.indexOf(item),1);
@@ -94,12 +97,8 @@ function createBook(item) {
         render();
     });
 
-    //add toggle ability to each book 'read' button on click
-    readBtn.addEventListener('click', () => { 
-        item.read = !item.read; 
-        setData(); 
-        render();
-    }); 
+
+    library.appendChild(bookDiv);
 };
 
 // setting Library to be stored in local storage
