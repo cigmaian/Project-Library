@@ -9,6 +9,8 @@
 </head>
 <body>
     <h1> myLibrary</h1> 
+    <p class="info">Your favorite books will be saved locally so you can refresh the
+         page as many time as you want without losing the data</p>
         <div id="newBtn-Container">
             <button id="newBtn"> New Book</button>
         </div>
@@ -19,7 +21,7 @@
             <div id='textInput'> 
                     <input type="text" id="title" name="title" placeholder="Title">
                     <input type="text" id="author" name="author" placeholder="Author">
-                    <input type="text" id="pages" name="pages" placeholder="Pages">
+                    <input type="number" id="pages" name="pages" placeholder="Pages">
                 </div>
                 <div id="checkBox">
                     <label> Read: </label><input type="checkbox" id="read" value="yes">
@@ -27,7 +29,25 @@
                 <button type="submit" form="form" id="addBtn">Add</button>
             </form>
         </div>
+        <div class="cotent">
+            <div class="left">
         <div id='Library-container'></div>
+            </div>
+            <div class="rigth">
+                  <div class="search-wrapper">
+                        <label for="search">Search your favorite author by name and 
+                            city </label>
+                        <input type="search" id="search" data-search>
+                    </div>
+                    <div class="user-cards" data-user-cards-container></div>
+                    <template data-user-template>
+                        <div class="card">
+                        <div class="header" data-header></div>
+                        <div class="body" data-body></div>
+                        </div>
+                    </template>
+            </div>
+        </div>  
     <script src="./script.js" defer></script>
 </body>
 </html>
