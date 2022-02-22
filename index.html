@@ -21,10 +21,11 @@
             <div id='textInput'> 
                     <input type="text" id="title" name="title" placeholder="Title">
                     <input type="text" id="author" name="author" placeholder="Author">
-                    <input type="number" id="pages" name="pages" placeholder="Pages">
+                    <input type="number" id="pages" name="pages" placeholder="Pages" required>
                 </div>
                 <div id="checkBox">
-                    <label> Read: </label><input type="checkbox" id="read" value="yes">
+                    <label for="read"> Read: </label>
+                    <input type="checkbox" id="read" value="yes">
                 </div>
                 <button type="submit" form="form" id="addBtn">Add</button>
             </form>
